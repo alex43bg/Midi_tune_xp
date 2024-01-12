@@ -1,11 +1,10 @@
 import React from 'react'
-import '../App'
 
-const MySvgComponent = () => {
+const LogoSvg = () => {
 	const fillColor = '#252526'
 	return (
 		<svg
-			className='my-svg'
+			className='Logo-svg'
 			width='408'
 			height='185'
 			viewBox='0 0 408 185'
@@ -28,4 +27,4 @@ const MySvgComponent = () => {
 	)
 }
 
-export default MySvgComponent
+export default LogoSvg

@@ -1,10 +1,6 @@
 import { OrbitControls } from '@react-three/drei'
-// import { Ball } from './Ball_my_site'
-// import { Header } from './Header';
-// import { Header } from './Header'
-import { Ball1 } from 'components/ball/Ball_lite.jsx'
-// import { Ava } from "./Ava.jsx";
-// import { Ava1 } from './Ava1.jsx'
+// import { Ball } from './Ball/Ball_my_site'
+import { Ball1 } from './Ball/Ball_lite'
 
 export const Experience = () => {
 	return (
@@ -12,7 +8,6 @@ export const Experience = () => {
 			<OrbitControls enableZoom={true} />
 			{/* <Header/> */}
 			<Ball1 />
-			
 		</>
 	)
 }
