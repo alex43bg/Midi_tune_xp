@@ -9,7 +9,7 @@ export function Ball_tx(props) {
 	const { nodes, animations } = useGLTF('./models/Ball_my_site.glb')
 	const { actions } = useAnimations(animations, group)
 
-	const customMaterial = new MeshLambertMaterial({ color: new Color(0x3131c4) })
+	const customMaterial = new MeshLambertMaterial({ color: new Color(0x6464d1) })
 
 	// Створюємо GUI
 	const gui = new dat.GUI()
