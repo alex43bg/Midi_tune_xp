@@ -8,7 +8,7 @@ export function Ball(props) {
   const { nodes, animations } = useGLTF("./models/Ball_my_site.glb");
   const { actions } = useAnimations(animations, group);
 
-  const customMaterial = new MeshLambertMaterial({ color: 0x0016CAF4 });
+  const customMaterial = new MeshLambertMaterial({ color: 0xff000 });
 
   useFrame((state, delta) => {
     group.current.rotation.x += 0.01 * delta;
