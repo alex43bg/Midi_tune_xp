@@ -14,11 +14,11 @@ export default function App() {
 				fov: 80,
 				position: [2.3, 1, 2.3],
 			}}
-			gl={{ gammaOutput: true }}  // Додаємо gammaOutput: true в об'єкт gl
-      colorManagement  
+			gl={{ gammaOutput: true }} // Додаємо gammaOutput: true в об'єкт gl
+			colorManagement
 		>
 			<Experience />
-			<ambientLight intensity={0.1} />
+			<ambientLight intensity={0.2} />
 			<Html>
 				<LogoSvg />
 				<Button />
