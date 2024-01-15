@@ -37,16 +37,16 @@ function Scene() {
 		<>
 			{/* <color attach='background' args={['black']} /> */}
 
-			<ambientLight intensity={20} />
+			<ambientLight intensity={1} />
 			<Experience />
 			{/* //////////////////////////////////////////////////////////////////////////////// */}
 			<PerspectiveCamera
 				theatreKey='Camera'
 				makeDefault
 				position={[0, 0, 0]}
-				fov={80}
-				near={0.1}
-				far={70}
+				fov={60}
+				near={1.7}
+				far={100}
 			/>
 			{/* //////////////////////////////////////////////////////////////////////////////// */}
 			{/* <Html> */}
