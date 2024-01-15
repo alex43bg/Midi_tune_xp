@@ -4,6 +4,7 @@ import { getProject, val } from '@theatre/core'
 import { PerspectiveCamera, SheetProvider, useCurrentSheet } from '@theatre/r3f'
 import './Styles/App.css'
 import { Experience } from './components/Experience'
+import { OrbitControls } from '@react-three/drei'
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function App() {
 	const sheet = getProject('Fly Ball').sheet('Scene')
@@ -36,8 +37,12 @@ function Scene() {
 	return (
 		<>
 			{/* <color attach='background' args={['black']} /> */}
-
+			<OrbitControls enableZoom={false}/>
 			<ambientLight intensity={1} />
+			<directionalLight position={[5, 5, 5]} intensity={10} />
+
+
+
 			<Experience />
 			{/* //////////////////////////////////////////////////////////////////////////////// */}
 			<PerspectiveCamera
