@@ -1,25 +1,23 @@
-import { Html, ScrollControls, useScroll } from '@react-three/drei'
+import { ScrollControls, useScroll } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { getProject, val } from '@theatre/core'
 import { PerspectiveCamera, SheetProvider, useCurrentSheet } from '@theatre/r3f'
 import './Styles/App.css'
-import './components/Button/Button.css'
-import './components/Logo/LogoSvg.css'
-// import Button from './components/Button/button'
 import { Experience } from './components/Experience'
-// import LogoSvg from './components/Logo/LogoSvg'
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function App() {
-	const sheet = getProject('Fly Through').sheet('Scene')
+	const sheet = getProject('Fly Ball').sheet('Scene')
 
 	return (
-		<Canvas gl={{ preserveDrawingBuffer: true }}>
-			<ScrollControls pages={5}>
-				<SheetProvider sheet={sheet}>
-					<Scene />
-				</SheetProvider>
-			</ScrollControls>
-		</Canvas>
+		<>
+			<Canvas gl={{ preserveDrawingBuffer: true }}>
+				<ScrollControls pages={5}>
+					<SheetProvider sheet={sheet}>
+						<Scene />
+					</SheetProvider>
+				</ScrollControls>
+			</Canvas>
+		</>
 	)
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,13 +27,19 @@ function Scene() {
 	const scroll = useScroll()
 
 	useFrame(() => {
+		// the length of our sequence
 		const sequenceLength = val(sheet.sequence.pointer.length)
+		// update the "position" of the playhead in the sequence, as a fraction of its whole length
 		sheet.sequence.position = scroll.offset * sequenceLength
 	})
+
 	return (
 		<>
-			<ambientLight intensity={0.2} />
+			{/* <color attach='background' args={['black']} /> */}
+
+			<ambientLight intensity={20} />
 			<Experience />
+			{/* //////////////////////////////////////////////////////////////////////////////// */}
 			<PerspectiveCamera
 				theatreKey='Camera'
 				makeDefault
@@ -44,10 +48,11 @@ function Scene() {
 				near={0.1}
 				far={70}
 			/>
-			<Html>
-				{/* <LogoSvg /> */}
-				{/* <Button /> */}
-			</Html>
+			{/* //////////////////////////////////////////////////////////////////////////////// */}
+			{/* <Html> */}
+			{/* <LogoSvg /> */}
+			{/* <Button /> */}
+			{/* </Html> */}
 		</>
 	)
 }
