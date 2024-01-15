@@ -20,8 +20,8 @@ export default function App() {
 			<Experience />
 			<ambientLight intensity={0.2} />
 			<Html>
-				<LogoSvg />
-				<Button />
+				{/* <LogoSvg /> */}
+				{/* <Button /> */}
 			</Html>
 		</Canvas>
 	)
