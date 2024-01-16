@@ -12,8 +12,8 @@ export function Ball(props) {
 
   useFrame((state, delta) => {
     group.current.rotation.x += 0 * delta;
-    group.current.rotation.y += 0 * delta;
-    group.current.rotation.z += 0.1 * delta;
+    group.current.rotation.y += 0.02 * delta;
+    group.current.rotation.z += 0 * delta;
   });
 
   return (

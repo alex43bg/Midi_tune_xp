@@ -1,7 +1,7 @@
 import React from 'react'
 
 const LogoSvg = () => {
-	const fillColor = '#252526'
+	const fillColor = '#87C232'
 	return (
 		<svg
 			className='Logo-svg'
