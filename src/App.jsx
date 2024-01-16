@@ -9,11 +9,12 @@ import Ball_animation from './components/ball/Ball_animation.json'
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function App() {
 	const sheet = getProject('Fly Ball',{state: Ball_animation}).sheet('Scene')
+	// const sheet = getProject('Fly Ball').sheet('Scene')
 
 	return (
 		<>
 			<Canvas gl={{ preserveDrawingBuffer: true }}>
-				<ScrollControls pages={2} damping={1} maxSpeed={1}>
+				<ScrollControls pages={5} damping={1} maxSpeed={1}>
 					<SheetProvider sheet={sheet}>
 						<Scene />
 					</SheetProvider>
@@ -40,7 +41,8 @@ function Scene() {
 			{/* <color attach='background' args={['black']} /> */}
 			<OrbitControls enableZoom={false} />
 			<ambientLight intensity={1} />
-			<directionalLight position={[5, 5, 5]} intensity={1} />
+			{/* <spotLight position={[1,1,1,]}/> */}
+			<directionalLight position={[5, 5, 5]} intensity={3} />
 
 			<Experience />
 			{/* //////////////////////////////////////////////////////////////////////////////// */}

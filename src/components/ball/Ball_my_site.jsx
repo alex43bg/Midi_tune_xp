@@ -11,9 +11,9 @@ export function Ball(props) {
   const customMaterial = new MeshLambertMaterial({ color: 0x6464d1 });
 
   useFrame((state, delta) => {
-    group.current.rotation.x += 0.01 * delta;
-    group.current.rotation.y += 0.01 * delta;
-    group.current.rotation.z += 0.01 * delta;
+    group.current.rotation.x += 0 * delta;
+    group.current.rotation.y += 0 * delta;
+    group.current.rotation.z += 0.1 * delta;
   });
 
   return (

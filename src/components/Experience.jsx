@@ -1,9 +1,9 @@
-import { Ball_tx_lite } from './ball/Ball_tx_lite'
+import { Ball} from './ball/Ball_my_site'
 
 export const Experience = () => {
 	return (
 		<>
-			<Ball_tx_lite />
+			<Ball />
 		</>
 	)
 }
