@@ -5,14 +5,15 @@ import { PerspectiveCamera, SheetProvider, useCurrentSheet } from '@theatre/r3f'
 import './Styles/App.css'
 import { Experience } from './components/Experience'
 import { OrbitControls } from '@react-three/drei'
+import Ball_animation from './components/ball/Ball_animation.json'
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function App() {
-	const sheet = getProject('Fly Ball').sheet('Scene')
+	const sheet = getProject('Fly Ball',{state: Ball_animation}).sheet('Scene')
 
 	return (
 		<>
 			<Canvas gl={{ preserveDrawingBuffer: true }}>
-				<ScrollControls pages={5}>
+				<ScrollControls pages={2} damping={1} maxSpeed={1}>
 					<SheetProvider sheet={sheet}>
 						<Scene />
 					</SheetProvider>
@@ -37,21 +38,23 @@ function Scene() {
 	return (
 		<>
 			{/* <color attach='background' args={['black']} /> */}
-			<OrbitControls enableZoom={false}/>
+			<OrbitControls enableZoom={false} />
 			<ambientLight intensity={1} />
-			<directionalLight position={[5, 5, 5]} intensity={10} />
-
-
+			<directionalLight position={[5, 5, 5]} intensity={1} />
 
 			<Experience />
 			{/* //////////////////////////////////////////////////////////////////////////////// */}
 			<PerspectiveCamera
 				theatreKey='Camera'
 				makeDefault
-				position={[0, 0, 0]}
-				fov={60}
 				near={1.7}
 				far={100}
+				fov={60}
+				zoom={1}
+				position={[3.217, 3.314, 0.138]}
+				rotation={[1, 1, 1]}
+				scale={[1, 1, 1]}
+				
 			/>
 			{/* //////////////////////////////////////////////////////////////////////////////// */}
 			{/* <Html> */}

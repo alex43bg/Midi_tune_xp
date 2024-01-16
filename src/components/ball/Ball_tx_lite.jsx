@@ -36,8 +36,8 @@ export function Ball_tx_lite(props) {
 
 	useFrame((state, delta) => {
 		group.current.rotation.x += 0.01 * delta
-		group.current.rotation.y += 0.01 * delta
-		group.current.rotation.z += 0.01 * delta
+		group.current.rotation.y += 0 * delta
+		group.current.rotation.z += 0 * delta
 	})
 
 	///////////////////////////////////////////////////////////////////////////////
