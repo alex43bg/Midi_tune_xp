@@ -1,6 +1,36 @@
 #root {
 	width: 100vw;
 	height: 100vh;
-	background-color: #524a4a;
+	background-color: #000000e3;
 }
 
+.Logo-svg {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: -560px;
+	left: -930px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+	width: 200px;
+	font-size: 50px;
+	position: fixed;
+	top: 4000px;
+	left: 650px;
+	padding: 10px 20px;
+	font-size: 25px;
+	background-color: #87C232;
+	color: #252526;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+	background-color: #527af6;
+}
