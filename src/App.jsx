@@ -21,7 +21,7 @@ export default function App() {
 			<ambientLight intensity={0.8} />
 			{/* <spotLight position={[1,1,1,]}/> */}
 			<directionalLight position={[10, 5, 5]} intensity={3} />
-				<ScrollControls pages={5} damping={1} maxSpeed={1}>
+				<ScrollControls pages={5} damping={2} maxSpeed={1}>
 					<SheetProvider sheet={sheet}>
 						<Scene />
 					</SheetProvider>
