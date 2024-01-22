@@ -1,1 +1,1 @@
-const name = 'asd'
+const name = 1
