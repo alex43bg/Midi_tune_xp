@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Logo.css';
 const LogoSvg = () => {
 	const fillColor = '#87C232'
 	return (

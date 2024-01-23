@@ -1,16 +1,8 @@
-.Logo-svg {
-	position: fixed;
-	overflow: hidden;
-	width: 300px;
-	height: 300px;
-	top: -560px;
-	left: -930px;
-}
 
 @media (max-width: 600px) {
 	.Logo-svg {
+		pointer-events: none; 
 		position: fixed;
-		overflow: hidden;
 		width: 250px;
 		height: 250px;
 		top: -450px;
@@ -20,8 +12,8 @@
 
 @media (min-width: 601px) {
 	.Logo-svg {
+		pointer-events: none; 
 		position: fixed;
-		overflow: hidden;
 		width: 300px;
 		height: 300px;
 		top: -560px;

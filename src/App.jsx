@@ -8,10 +8,11 @@ import { Experience } from './components/Experience'
 import Ball_animation from './components/ball/Ball_animation.json'
 // import { OrbitControls } from '@react-three/drei'
 import { Html } from '@react-three/drei'
-import LogoSvg from './components/Logo/LogoSvg'
-import Button from './components/Button/button'
-// == === =>
-// import CameraPositionLogger from './components/CameraPositionLoger'
+// import LogoSvg from './components/Logo/LogoSvg'
+// import Button from './components/Button/button'
+import React from 'react'
+import { useAtom } from 'jotai'
+import { currentPageAtom } from './GlobalState'
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function App() {
 	const sheet = getProject('Fly Ball', { state: Ball_animation }).sheet('Scene')
@@ -20,14 +21,9 @@ export default function App() {
 	return (
 		<>
 			<Canvas gl={{ preserveDrawingBuffer: true }}>
-				<Html>
-					<LogoSvg />
-					<Button />
-				</Html>
 				<ambientLight intensity={0.8} />
-
 				<directionalLight position={[10, 5, 5]} intensity={3} />
-				<ScrollControls pages={5} damping={1} maxSpeed={1}>
+				<ScrollControls pages={10} damping={0.4} maxSpeed={0.05}>
 					<SheetProvider sheet={sheet}>
 						<Scene />
 					</SheetProvider>
@@ -41,12 +37,19 @@ export default function App() {
 function Scene() {
 	const sheet = useCurrentSheet()
 	const scroll = useScroll()
-
+	const [currentPage, setCurrentPage] = useAtom(currentPageAtom)
+	const sequenceLength = val(sheet.sequence.pointer.length)
+	sheet.sequence.position = scroll.offset * sequenceLength
+	function logCurrentPageCallback(scroll, callback) {
+		const currentPage = Math.floor(scroll.offset * scroll.pages) + 1
+		console.log('CurrentPage', currentPage)
+		callback(currentPage)
+	}
 	useFrame(() => {
-		// the length of our sequence
-		const sequenceLength = val(sheet.sequence.pointer.length)
-		// update the "position" of the playhead in the sequence, as a fraction of its whole length
-		sheet.sequence.position = scroll.offset * sequenceLength
+		if (scroll) {
+			logCurrentPageCallback(scroll, setCurrentPage)
+			sheet.sequence.position = scroll.offset * sequenceLength
+		}
 	})
 
 	return (
