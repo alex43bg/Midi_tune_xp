@@ -1,0 +1,30 @@
+.Logo-svg {
+	position: fixed;
+	overflow: hidden;
+	width: 300px;
+	height: 300px;
+	top: -560px;
+	left: -930px;
+}
+
+@media (max-width: 600px) {
+	.Logo-svg {
+		position: fixed;
+		overflow: hidden;
+		width: 250px;
+		height: 250px;
+		top: -450px;
+		left: -170px;
+	}
+}
+
+@media (min-width: 601px) {
+	.Logo-svg {
+		position: fixed;
+		overflow: hidden;
+		width: 300px;
+		height: 300px;
+		top: -560px;
+		left: -930px;
+	}
+}

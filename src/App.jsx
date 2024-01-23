@@ -3,12 +3,14 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { getProject, val } from '@theatre/core'
 import { PerspectiveCamera, SheetProvider, useCurrentSheet } from '@theatre/r3f'
 import './Styles/App.css'
+import './components/Logo/Logo.css'
 import { Experience } from './components/Experience'
 import Ball_animation from './components/ball/Ball_animation.json'
 // import { OrbitControls } from '@react-three/drei'
 import { Html } from '@react-three/drei'
 import LogoSvg from './components/Logo/LogoSvg'
 import Button from './components/Button/button'
+// == === =>
 // import CameraPositionLogger from './components/CameraPositionLoger'
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function App() {
@@ -18,7 +20,6 @@ export default function App() {
 	return (
 		<>
 			<Canvas gl={{ preserveDrawingBuffer: true }}>
-			
 				<Html>
 					<LogoSvg />
 					<Button />

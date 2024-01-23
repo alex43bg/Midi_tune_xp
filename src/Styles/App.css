@@ -4,13 +4,7 @@
 	background-color: #000000e3;
 }
 
-.Logo-svg {
-	position: absolute;
-	width: 300px;
-	height: 300px;
-	top: -560px;
-	left: -930px;
-}
+
 
 .button {
   display: flex;

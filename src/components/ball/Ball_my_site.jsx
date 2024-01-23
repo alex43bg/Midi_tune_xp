@@ -4,12 +4,13 @@ import { useFrame, useThree } from 'react-three-fiber'
 import { MeshLambertMaterial } from 'three'
 
 export function Ball(props) {
+	
 	const group = useRef()
 	const { nodes, animations } = useGLTF('./models/Ball_my_site.glb')
 	const { actions } = useAnimations(animations, group)
 	//////////////////////////////////////////////////////////////////////////////
 	const { viewport } = useThree()
-	const ratioScale = Math.min(1.2, Math.max(0.53, window.innerWidth / 1920))
+	const ratioScale = Math.min(1.2, Math.max(0.57, window.innerWidth / 1920))
 	//////////////////////////////////////////////////////////////////////////////
 	const customMaterial = new MeshLambertMaterial({ color: 0x11bc33 })
 	/////////////////////////////////////////////////////////////////////////////
