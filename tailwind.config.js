@@ -6,8 +6,13 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      serif: ["Playfair Display", ...defaultTheme.fontFamily.sans],
-      sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+      fontFamily: {
+        serif: ["Playfair Display", ...defaultTheme.fontFamily.serif],
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        'midi': '#CC397B',
+      },
     },
   },
   plugins: [],

@@ -25,11 +25,12 @@ import React from 'react'
 import { useAtom } from 'jotai'
 import { currentPageAtom, scene1Atom } from './GlobalState'
 import ScrollPageContainer from './UI/ScrollPageContainer'
+import Feature from './UI/Feature'
+import ContentContainer from './UI/ContentContainer'
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export default function App() {
 	const sheet = getProject('Fly Ball', { state: Ball_animation }).sheet('Scene')
 	// const sheet = getProject('Fly Ball').sheet('Scene')
-
 	return (
 		<>
 			<Canvas gl={{ preserveDrawingBuffer: true, physicalCorrectLights: true }}>
@@ -39,18 +40,14 @@ export default function App() {
 					<SheetProvider sheet={sheet}>
 						<Scene />
 					</SheetProvider>
+
 					<Scroll html>
 						<ScrollPageContainer>
-							<div className='bg-sky-500/5 w-screen h-screen'>
-								<h1 className='text-3xl font-bold '>
-									Hallo Lorem ipsum dolor sit amet.
+							<ContentContainer>
+								<h1 className='text-9xl font-bold text-midi pointer-events-none'>
+									Midi Tune
 								</h1>
-							</div>
-							<div className='bg-sky-500/50 w-screen h-screen'>
-								<h1 className='text-3xl font-bold '>
-									Hallo Lorem ipsum dolor sit amet.
-								</h1>
-							</div>
+							</ContentContainer>
 						</ScrollPageContainer>
 					</Scroll>
 				</ScrollControls>

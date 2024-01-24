@@ -7,10 +7,10 @@ import LogoSvg from './components/Logo/LogoSvg'
 //Animation scroll setup
 ////////////////////////////////////////////////////////////////////////////////
 
-import studio from '@theatre/studio'
-import extension  from '@theatre/r3f/dist/extension'
-studio.extend(extension)
-studio.initialize()
+// import studio from '@theatre/studio'
+// import extension  from '@theatre/r3f/dist/extension'
+// studio.extend(extension)
+// studio.initialize()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

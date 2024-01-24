@@ -1,9 +1,20 @@
 import { Children } from 'react'
 
-const ScrollPageContainer = ({children}) => {
+const ScrollPageContainer = ({ children, customJustify, customMargin }) => {
 	return (
 		<>
-			<div className='w-screen h-screen relative flex flex-col justify-center  items-center bg-sky-500/5'>
+			<div
+				className={`
+				w-screen 
+				h-screen 
+				z-10 
+				relative 
+				flex 
+				flex-col 
+				justify-center  
+				items-center 
+				${(customJustify, customMargin)}`}
+			>
 				{children}
 			</div>
 		</>
